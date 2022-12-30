@@ -21,12 +21,12 @@ MONTH_NAMES_TO_PLOTPOS = {"January": 1, "February": 2, "March": 3, "December": 0
 # Hb(n)_m = Global irradiance by tilt angle
 VALUES_OF_INTEREST = ["H(h)_m", "H(i)_m", "Hb(n)_m"] 
 
-#Calculates extraterrestial irradiance, I_0
-#G_0n: normal irradiance at 0,n 
-#w1: hour angle for hourly endpoints (beginning)
-#w2: hour angle for hourly endpoints (end)
-#phi: latitude
-#delta: declination at the day
+# Calculates extraterrestial irradiance, I_0
+# G_0n: normal irradiance at 0,n 
+# w1: hour angle for hourly endpoints (beginning)
+# w2: hour angle for hourly endpoints (end)
+# phi: latitude
+# delta: declination at the day
 def extr_irrad(G_0n, w1, w2, phi, delta):
 	a = 12 * 3600 / math.pi
 	b = math.pi / 180
@@ -37,7 +37,7 @@ def extr_irrad(G_0n, w1, w2, phi, delta):
 def clearness_index(G_0n, G_n):
 	return G_n / G_0n
 
-#Loads the data from the json files
+# Loads the data from the json files
 def load_data():
 	name = "./data/Monthlydata_42.000_12.215_SA2_2013_2020-"
 
@@ -142,8 +142,6 @@ def main():
 	months_averaged_by_angle = data_parse(datasets)
 
 	calculate_optimal_angle(months_averaged_by_angle)
-
-
 
 if __name__ == "__main__":
 	main()
